@@ -4,6 +4,7 @@ target/
 !**/src/main/**
 !**/src/test/**
 
+temp
 dist
 node_modules
 
