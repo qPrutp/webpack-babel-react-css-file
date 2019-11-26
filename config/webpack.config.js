@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // We'll refer to our source and dist paths frequently, so let's store them here
-const PATH_SOURCE = path.join(__dirname, './src');
-const PATH_DIST = path.join(__dirname, './dist');
+const PATH_SOURCE = path.join(__dirname, '../src');
+const PATH_DIST = path.join(__dirname, '../dist');
 
 // Export a configuration object
 // If we export a function, it will be passed two parameters, the first
