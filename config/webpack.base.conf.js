@@ -70,7 +70,7 @@ module.exports = {
                     plugins: [
                         "@babel/plugin-syntax-dynamic-import",
                         "@babel/plugin-proposal-class-properties",
-                        // "@babel/plugin-transform-runtime"
+                        "@babel/plugin-transform-runtime"
                     ]
                 },
             }
@@ -129,7 +129,7 @@ module.exports = {
             template: `${PATHS.src}/index.html`,
             filename: './index.html'
         }),
-        
+
         new CopyWebpackPlugin([
             { from: `${PATHS.src}/img`, to: `${PATHS.assets}img` },
             { from: `${PATHS.src}/static`, to: `` },
