@@ -20,6 +20,8 @@ npm run build
 #### питання:
 1. Не можливо змінити baseUrl для сцсс на відносний. Збирається проект лише з $baseUrl: '/'; 
 2. favicon.ico, як краще підключати до index.html.
+3. не можливо використовувати асинк @babel/plugin-transform-runtime не вирішує проблеми.
+4. щоб була можливість використовувати стрілочку функцію та змінні в класі оголошувати на пряму в стейт без конструктора прийшлось ставити @babel/plugin-syntax-dynamic-import, @babel/plugin-proposal-class-properties.
 ---
 #### <a name="should_add"></a> should add:
 [video: <b>&dArr;</b> Собираем бандл мечты с помощью Webpack / Максим Соснов (N1.RU)](https://www.youtube.com/watch?v=4ClK_0fxsVM)

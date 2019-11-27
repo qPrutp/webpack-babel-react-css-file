@@ -45,6 +45,8 @@ module.exports = {
         rules: [{
             test: /\.(js|jsx)$/, // Apply this rule to files ending in .(js|jsx)
             exclude: /node_modules/, // Don't apply to files residing in node_modules
+            // use: ['babel-loader']
+            //--------------------
             use: { // Use the following loader and options
                 loader: 'babel-loader',
                 // We can pass options to both babel-loader and Babel. This option object
@@ -64,8 +66,15 @@ module.exports = {
                         // <div> -> React.createElement('div')
                         '@babel/preset-react',
                     ],
+
+                    plugins: [
+                        "@babel/plugin-syntax-dynamic-import",
+                        "@babel/plugin-proposal-class-properties",
+                        // "@babel/plugin-transform-runtime"
+                    ]
                 },
             }
+            //--------------------
         }, {
             test: /\.(png|jpg|gif|svg)$/,
             loader: 'file-loader',
