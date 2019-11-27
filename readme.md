@@ -1,6 +1,4 @@
-<div align="center">
-    Webpack+Sass+Babel+React
-</div>
+
 ```bash
 
 # Download repository:
