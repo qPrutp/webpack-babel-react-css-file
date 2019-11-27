@@ -1,16 +1,26 @@
+@import "./utils/mixins.scss";
+@import "./utils/vars.scss";
+
 h1 {
-    color: red;
+    color: $danger-color;
 }
 
 h2 {
-    color: red;
+    color: $danger-color;
 }
 
 h3 {
-    color: red;
+    color: $danger-color;
 }
 
 p {
     width: 300px;
     text-align: center;
+}
+
+#img2 {
+    background-image: url('#{$baseUrl}assets/img/img2.png');
+    // background-image: url(str-insert('assets/img/img2.png', $baseUrl, 1));
+    width: 100%;
+    height: 55px;
 }
