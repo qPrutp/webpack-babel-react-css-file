@@ -4,7 +4,7 @@
     <span style="color:yellow;">Babel</span>+
     <span style="color:sandybrown;">React</span>
 </div>
-``` bash
+```bash
 
 # Download repository:
 git clone https://github.com/qPrutp/webpack-babel-react-css-file.git
@@ -37,13 +37,13 @@ npm run build
  - tree shaking and uglifyJS;
  - SplitChanksPlugin;
  - runtimeChunk; &darr;
-    ``` js
+    ```js
     optimization: {
         runtimeChunk: true
     }
     ```
  - HashedModuleldsPlugin; &darr;
-   ``` js
+   ```js
    new webpack.HashedModuleldsPlugin({
        hashFunction: 'md4',
        hashDigest: 'base64',
