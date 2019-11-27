@@ -34,9 +34,6 @@ module.exports = {
     output: {
         filename: `${PATHS.assets}js/[name].[hash].js`,
         path: PATHS.dist,
-        // якщо потрібно абсолютний шлях до імтортованих файлів js та css в index.html
-        // значення publicPath: '/', якщо відносне publicPath: './'
-        publicPath: '/',
     },
     // Determine how the different types of modules will be treated.
     // https://webpack.js.org/configuration/module

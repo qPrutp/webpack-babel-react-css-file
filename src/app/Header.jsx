@@ -56,9 +56,14 @@ class Header extends Component {
                             onClick={()=>console.log(this.state)}
                         >print state</button>
                     </div>
+                    <div className="">
+                        <button
+                            onClick={() => console.log([1, 2, [3, 4, [[[[[5]]]], 6]]].flat(Infinity))}
+                        >print flat()</button>
+                    </div>
                 </div>
             </header>
-        )
+        );
     }
 }
 

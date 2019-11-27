@@ -1,4 +1,16 @@
 {
+    "name": "webpack-babel-react-css-file",
+    "description": "discover webpack with many loaders and plugins for dev and prod versions",
+    "version": "0.0.1",
+    "license": "MIT",
+    "author": "https://github.com/qPrutp",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/qPrutp/webpack-babel-react-css-file.git"
+    },
+    "bugs": {
+        "url": "https://github.com/qPrutp/webpack-babel-react-css-file/issues"
+    },
     "scripts": {
         "build": "webpack --config ./config/webpack.build.conf.js",
         "dev": "webpack-dev-server --open --config ./config/webpack.dev.conf.js"
@@ -13,6 +25,7 @@
         "@babel/plugin-proposal-class-properties": "^7.7.4",
         "@babel/plugin-syntax-dynamic-import": "^7.7.4",
         "@babel/plugin-transform-runtime": "^7.7.4",
+        "@babel/runtime": "^7.7.4",
         "@babel/preset-env": "^7.7.4",
         "@babel/preset-react": "^7.7.4",
         "autoprefixer": "^9.7.2",
@@ -35,7 +48,6 @@
         "webpack-merge": "^4.2.2"
     },
     "dependencies": {
-        "@babel/runtime": "^7.7.4",
         "core-js": "^3.4.2",
         "react": "^16.12.0",
         "react-dom": "^16.12.0"
