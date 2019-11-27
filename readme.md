@@ -1,8 +1,5 @@
 <div align="center">
-    <span style="color:deepskyblue;">Webpack</span>+
-    <span style="color:hotpink;">Sass</span>+
-    <span style="color:yellow;">Babel</span>+
-    <span style="color:sandybrown;">React</span>
+    Webpack+Sass+Babel+React
 </div>
 ```bash
 
