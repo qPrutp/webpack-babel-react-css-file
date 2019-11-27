@@ -33,8 +33,7 @@ npm run dev
 npm run build
 ```
 ---
-[should_add]
-#### should add:
+#### <a name="should_add"></a> should add:
 [video: Собираем бандл мечты с помощью Webpack / Максим Соснов (N1.RU)&dArr;](https://www.youtube.com/watch?v=4ClK_0fxsVM)
  - tree shaking and uglifyJS;
  - SplitChanksPlugin;
