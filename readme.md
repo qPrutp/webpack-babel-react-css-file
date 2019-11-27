@@ -1,4 +1,4 @@
-<div align="center" style="background-color:grey;">
+<div align="center">
     <span style="color:deepskyblue;">Webpack</span>+
     <span style="color:hotpink;">Sass</span>+
     <span style="color:yellow;">Babel</span>+
