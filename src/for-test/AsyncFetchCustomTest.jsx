@@ -17,8 +17,7 @@ class AsyncFetchCustomTest extends React.Component {
         response: {}
     }
 
-
-    startRequest = async () => {
+    startFetchRequest = async () => {
         const { loadingFunc, errorFunc, loadedFunc } = this.props
         loadingFunc()
         this.setState({
@@ -26,9 +25,9 @@ class AsyncFetchCustomTest extends React.Component {
             success: false,
             loading: true
         })
-
+        
         try {
-            const res = await fetch('http://dummy.restapiexample.com/api/v1/employees')
+            const res = await fetch('http://dummy.restapiexample.com/api/v1/employee/1')
             if (!res.ok) {
                 this.setState({
                     error: true,
@@ -37,7 +36,8 @@ class AsyncFetchCustomTest extends React.Component {
                 throw Error(res.statusText)
             }
             const json = await res.json()
-
+            document.getElementById("demo_fetch").innerHTML = JSON.stringify(json, undefined, 2)
+            
             loadedFunc(json)
             this.setState({
                 success: true,
@@ -54,18 +54,53 @@ class AsyncFetchCustomTest extends React.Component {
         }
     }
 
+    startXMLHttpRequestRequest = () => {
+        let xhttp;
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest()
+          } else if (window.ActiveXObject) {
+            try {
+                xhttp = new ActiveXObject('Msxml2.XMLHTTP');
+            } 
+            catch (e) {
+              try {
+                xhttp = new ActiveXObject('Microsoft.XMLHTTP');
+              } 
+              catch (e) {}
+            }
+          }
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo_xhttp").innerHTML = this.responseText
+            }
+          }
+          xhttp.open('GET', 'http://dummy.restapiexample.com/api/v1/employee/1', true)
+          xhttp.send(null)
+    }
+
     render() {
         const { title } = this.props;
         const { loading, error, success } = this.state;
         return (
             <div className="asyncFetchCustomTest">
                 <p>{title}</p>
-                {loading && <InfoBlock>loading ...</InfoBlock>}
-                {error && <InfoBlock>error</InfoBlock>}
-                {success && <InfoBlock>success</InfoBlock>}
-                <button
-                    onClick={this.startRequest}
-                >test async fetch</button>
+                <div>
+                    <p id="demo_fetch">Let Fetch change this text.</p>
+                    <div style={{minHeight: '25px'}}>
+                        {loading && <InfoBlock>loading ...</InfoBlock>}
+                        {error && <InfoBlock>error</InfoBlock>}
+                        {success && <InfoBlock>success</InfoBlock>}
+                    </div>
+                    <button
+                        onClick={this.startFetchRequest}
+                    >test async fetch</button>
+                </div>
+                <div>
+                    <p id="demo_xhttp">Let AJAX change this text.</p>
+                    <button
+                        onClick={this.startXMLHttpRequestRequest}
+                    >test XMLHttpRequest</button>
+                </div>
             </div>
         )
     }
