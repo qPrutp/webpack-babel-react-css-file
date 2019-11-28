@@ -5,11 +5,7 @@ h1 {
     color: $danger-color;
 }
 
-h2 {
-    color: $danger-color;
-}
-
-h3 {
+.asyncFetchCustomTest {
     color: $danger-color;
 }
 
@@ -18,9 +14,9 @@ p {
     text-align: center;
 }
 
-#img2 {
-    background-image: url('#{$baseUrl}assets/img/img2.png');
-    // background-image: url(str-insert('assets/img/img2.png', $baseUrl, 1));
+#test_img {
+    background-image: url('#{$baseUrl}assets/img/car.png');
+    // background-image: url(str-insert('assets/img/car.png', $baseUrl, 1));
     width: 100%;
     height: 55px;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import img1 from '../img/img1.jpg';
-import img2 from '../img/img2.png';
+import img1 from './img/img1.jpg';
+import img2 from './img/img2.png';
 
 const ImgStyle = {
     height: '30px',
