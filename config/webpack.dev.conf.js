@@ -19,6 +19,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         host: 'localhost',
         // Specify a port number on which to listen for requests.
         port: 3000,
+        watchContentBase: true,
         // When using the HTML5 History API (you'll probably do this with React
         // later), index.html should be served in place of 404 responses.
         historyApiFallback: true,
