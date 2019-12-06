@@ -2,6 +2,7 @@ const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { publicPath } = require('./constans/core');
 
 const buildWebpackConfig = merge(baseWebpackConfig, {
@@ -28,6 +29,12 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
             template: `${baseWebpackConfig.externals.paths.src}/index.html`,
             filename: "./index.php"
         }),
+        /*
+            * для Apache серверу
+        */
+        new CopyWebpackPlugin([
+            { from: `${baseWebpackConfig.externals.paths.src}/static-apache`, to: `` },
+        ])
     ]
 });
 
