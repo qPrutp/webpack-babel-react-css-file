@@ -13,6 +13,7 @@
     },
     "scripts": {
         "build": "webpack --config ./config/webpack.build.conf.js",
+        "build-apache": "webpack --config ./config/webpack.build.apache.conf.js",
         "dev": "webpack-dev-server --open --config ./config/webpack.dev.conf.js"
     },
     "browserslist": [
