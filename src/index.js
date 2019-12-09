@@ -1,13 +1,16 @@
+import 'react-app-polyfill/ie11'
+import 'react-app-polyfill/stable'
+
+import 'jquery'
+import 'popper.js'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { BrowserRouter as Router } from 'react-router-dom'
-
-import 'react-app-polyfill/ie11'
-import 'react-app-polyfill/stable'
-
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './app/App'
 import ErrorBoundry from './app/components/ErrorBoundry'

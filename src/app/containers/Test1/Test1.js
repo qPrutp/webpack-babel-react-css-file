@@ -3,11 +3,12 @@ import { connect } from 'react-redux'
 import { compose } from '../../utils'
 import { withAppService } from '../../components/Hoc'
 import { Helmet } from 'react-helmet'
-import { Container, ButtonToolbar, Button, Alert } from 'react-bootstrap'
+import { Container, ButtonToolbar, Button, Alert, Modal } from 'react-bootstrap'
 import {
     printGlobalProps
 } from '../../actions'
 import RowMain from '../../components/RowMain'
+import ResultModal from './ResultModal'
 
 class Test1 extends React.Component {
     state = {
@@ -15,14 +16,16 @@ class Test1 extends React.Component {
         loading: false,
         error: false,
         success: false,
-        response: {}
+        response: {},
+        modalShow: false
     }
 
     getFetch = async() => {
         this.setState({
             error: false,
             success: false,
-            loading: true
+            loading: true,
+            modalShow: false
         })
 
         try {
@@ -31,20 +34,28 @@ class Test1 extends React.Component {
             return this.setState({
                 success: true,
                 loading: false,
-                response
+                response,
+                modalShow: true
             })
         } catch (error) {
             console.error('Щось пішло не так із Test1 getFetch!')
             this.setState({
                 error: true,
                 success: false,
-                loading: false
+                loading: false,
+                modalShow: false
             })
         }
     }
 
+    toggleModalShow = () => {
+        this.setState(state => {
+            return { modalShow: !state.modalShow }
+        })
+    }
+
     render() {
-        const { loading, error, success } = this.state
+        const { loading, error, success, modalShow, response } = this.state
         return (
             <Container>
                 <Helmet>
@@ -74,6 +85,8 @@ class Test1 extends React.Component {
                             </ButtonToolbar>
                         </React.Fragment>)}
                 />
+
+                <ResultModal show={modalShow} onHide={this.toggleModalShow} message={`fetch success: ${JSON.stringify(response)}`} />
             </Container>
         )
     }
