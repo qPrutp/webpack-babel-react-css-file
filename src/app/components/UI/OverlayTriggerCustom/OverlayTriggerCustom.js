@@ -12,7 +12,7 @@ function OverlayTriggerCustom({ onHide, children }) {
                 rootClose={true}
                 overlay={
                     <Popover id="popover-contained" outOfBoundaries={false}>
-                        <Popover.Title>
+                        <Popover.Title className="pt-0 pb-0">
                             <strong>Are you sure?</strong>
                         </Popover.Title>
                         <Popover.Content>

@@ -55,7 +55,7 @@ class Test1 extends React.Component {
     }
 
     render() {
-        const { loading, error, success, modalShow } = this.state
+        const { loading, error, success, modalShow, response } = this.state
         return (
             <Container>
                 <Helmet>
@@ -86,7 +86,7 @@ class Test1 extends React.Component {
                         </React.Fragment>)}
                 />
 
-                <ResultModal show={modalShow} onHide={this.toggleModalShow} message={'fetch success'} />
+                <ResultModal show={modalShow} onHide={this.toggleModalShow} message={`fetch success: ${JSON.stringify(response)}`} />
             </Container>
         )
     }

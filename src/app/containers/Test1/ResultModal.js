@@ -15,7 +15,7 @@ const ResultModal = (props) => {
                 <Modal.Body>
                     <Container>
                         <Row>
-                            <Col>
+                            <Col style={{wordWrap: "break-word"}}>
                                 {props.message}
                             </Col>
                         </Row>
