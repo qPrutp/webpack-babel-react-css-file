@@ -63,6 +63,7 @@ class Test2 extends React.Component {
     }
 
     render() {
+        // https://github.com/react-bootstrap/react-bootstrap/issues/3351
         const { loading, error, success } = this.state
         return (
             <Container>
