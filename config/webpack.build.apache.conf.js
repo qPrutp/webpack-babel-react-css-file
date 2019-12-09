@@ -1,20 +1,19 @@
-const merge = require('webpack-merge');
-const baseWebpackConfig = require('./webpack.base.conf');
+const merge = require("webpack-merge");
+const baseWebpackConfig = require("./webpack.base.conf");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const { publicPath } = require('./constans/core');
 
 const buildWebpackConfig = merge(baseWebpackConfig, {
-    mode: 'production',
+    mode: "production",
     output: {
         /*
             * якщо потрібно абсолютний шлях до імтортованих файлів js та css в index.html
-            * значення publicPath: '/', якщо відносне publicPath: './'
-            * ячкщо проект розгортається на Apache publicPath: '/', в іншову випадку буде помилка при роутах з параметрами
-            * параметр продубльований з webpack.base.conf оскільки при dev розробці потрібно значення publicPath: '/'
+            * значення publicPath: "/", якщо відносне publicPath: "./"
+            * ячкщо проект розгортається на Apache publicPath: "/", в іншову випадку буде помилка при роутах з параметрами
+            * параметр продубльований з webpack.base.conf оскільки при dev розробці потрібно значення publicPath: "/"
         */
-        publicPath,
+        publicPath: "/",
     },
     plugins: [
         // This plugin will delete all files inside `output.path` (the dist directory),
